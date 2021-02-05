@@ -1,0 +1,260 @@
+/*
+
+ORDER: Base + typography > general layout + grid > page layout > components > responsive design
+
+1em = 16px
+1rem = 10px
+*/
+
+/* BASE */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html { font-size: 62.5%; /* 1rem = 10px */ }
+
+body { 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777; 
+}
+
+/* TYPOGRAPHY */
+
+.heading-primary {
+  color: #fff;
+  font-size: 5rem;
+  text-transform: uppercase;
+  backface-visibility: hidden; /* Stops shakiness */
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+}
+
+.paragraph { font-size: 1.6rem; }
+
+/* GENERAL LAYOUT */
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto; 
+}
+
+.container::after {
+  content: "";
+  display: table;
+  clear: both; 
+}
+
+
+/* Utilities */
+.u-center-text { text-align: center !important; }
+
+.u-margin-bottom-large { margin-bottom: 8rem !important; }
+.u-margin-bottom-medium { margin-bottom: 4rem !important; }
+.u-margin-bottom-small { margin-bottom: 1.5rem !important; }
+.u-margin-top-big { margin-top: 8rem !important; }
+.u-margin-top-large { margin-top: 10rem !important; }
+
+.container .col-1-of-2 { width: calc((100% - 6rem) / 2); }
+.container .col-1-of-3 { width: calc((100% - 2 * 6rem) / 3); }
+.container .col-2-of-3 { width: calc(2 * ((100% - 2 *6rem) / 3) + 6rem); }
+.container .col-1-of-4 { width: calc((100% - 3 * 6rem) / 4); }
+.container .col-2-of-4 { width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+.container .col-3-of-4 { width: calc(3 * ((100% - 3 * 6rem) / 4) + 6rem * 2); }
+
+
+
+/* Animations */
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); 
+  }
+  80% {
+    transform: translateX(1rem); 
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0); } 
+  }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); 
+  }
+  80% {
+    transform: translateX(-1rem); 
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0); 
+  } 
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); 
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0); 
+  } 
+}
+
+/* Page Layout */
+
+.header__main {
+  height: 100vh;
+  background-image: linear-gradient(rgba(34, 34, 34, 0.7), rgba(34, 34, 34, 0.7)), url(./images/hero.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  position: relative;
+}
+
+.header__text {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 300;
+  font-size: 10rem;
+  position: absolute;
+  top: 46%;
+  right: 20%;
+}
+
+.header__primary {
+  color: #fff;
+  margin-top: -9rem;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+  animation: moveInRight 1.5s ease-out;
+}
+
+.header__secondary {
+  color: #bbbbbb;
+  font-size: 5rem;
+  margin-top: 1rem;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+  animation: moveInLeft 1.5s ease-out;
+}
+
+
+.nav {
+  z-index: 10;
+  width: 100%;
+  list-style: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.nav__list {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  letter-spacing: 8px;
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.25);
+  width: 100%;
+  padding: 6rem;
+  padding-bottom: 0;
+  text-align: right;
+}
+
+.nav__item {
+  transition: all .5s ease-out;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 2rem;
+}
+
+.nav__link:link, .nav__link:visited {
+  color: #aaa;
+  transition: all .3s ease-in-out;
+  text-decoration: none; 
+}
+
+.nav__link:hover {
+  color: #fff;
+}
+
+.nav__link-active:link, .nav__link-active:visited {
+  color: #fff;
+}
+
+
+.nav__link-inverted:link, .nav__link-inverted:visited {
+  color: #000;
+}
+
+.nav__link-inverted:before, .nav__link-inverted:after {
+  border-color: rgba(0, 0, 0, 0); 
+}
+
+.nav__link-inverted:hover {
+  border-color: #fff;
+}
+
+
+/* Components */
+
+
+
+
+
+/* Responsive Design */
+
+@media all and (max-width: 37.5em) { /* Phone - 600px */
+  .header__text {
+    font-size: 9rem;
+  }
+  .header__secondary {
+    margin-top: 0;
+  }
+
+  .nav__list {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .nav__item {
+    display: inline;
+  }
+  .nav__link:hover:after, .nav__link:hover:before {
+    width: 36%; 
+  }
+}
+
+@media all and (max-width: 56.25em) { /* Portrait tablets - 900px */
+  .u-margin-bottom-large {
+    margin-bottom: 5rem !important; 
+  } 
+  .u-margin-bottom-medium {
+    margin-bottom: 3rem !important; 
+  } 
+}
+
+@media all and (max-width: 75em) { /* Landscape tablets - 1200px */
+  .header__main {
+    background-image: linear-gradient(rgba(34, 34, 34, 0.7), rgba(34, 34, 34, 0.7)), url(./images/hero_mobile.jpg);
+  }
+
+  .header__text {
+    right: 5%;
+  }
+}
+
+@media all and (min-width: 112.5em) { /* Big desktops - 1800px+ */
+  .header__text {
+    right: 25%;
+  }
+}

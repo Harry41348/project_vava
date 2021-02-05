@@ -156,12 +156,10 @@ section {
       margin: 2vmin auto 4vmin auto; } }
   .gallery-images:last-child {
     flex-grow: 0; }
-  .gallery-images-project {
-    height: 70vh; }
-    @media (max-width: 56.25em) {
-      .gallery-images-project {
-        height: auto;
-        width: 100%; } }
+  @media (max-width: 56.25em) {
+    .gallery-images-project {
+      height: auto;
+      width: 100%; } }
 
 .gallery-img {
   transition: filter .5s ease-in-out, transform .3s ease-out, border .3s ease-in-out;
