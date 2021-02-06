@@ -116,6 +116,10 @@ body {
 
 /* Page Layout */
 
+section {
+  padding-top: 6rem;
+}
+
 .header__main {
   height: 100vh;
   background-image: linear-gradient(rgba(34, 34, 34, 0.7), rgba(34, 34, 34, 0.7)), url(./images/hero.jpg);
@@ -203,12 +207,107 @@ body {
   border-color: #fff;
 }
 
+.footer {
+  margin-top: 2rem;
+  height: 14rem; 
+}
+.footer-icons {
+  display: flex;
+  justify-content: center; 
+}
+
+.fa {
+  margin: 0 2.5rem;
+  opacity: 80%;
+  padding: 1.6rem;
+  font-size: 4.5rem;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .2s ease-in-out; 
+}
+
+.fa:hover {
+  opacity: 1;
+  transform: scale(1.2); 
+}
+
+.fa-facebook {
+  color: #000;
+  width: 6.8rem; 
+}
+.fa-facebook:hover {
+  color: #1877f2; 
+}
+
+.fa-instagram {
+  color: #000; 
+}
+.fa-instagram:hover {
+  color: #d6249f; 
+}
+
+.fa-youtube {
+  color: #000; 
+}
+.fa-youtube:hover {
+  color: #ff0000; 
+}
+
 
 /* Components */
 
+/* Gallery */
 
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1vmin;
+  list-style-type: none;
+}
 
+.gallery-images {
+  position: relative;
+  height: 40vh;
+  flex-grow: 1;
+  margin: 2vmin;
+}
+.gallery-images:hover .gallery-img {
+  filter: brightness(50%);
+}
+.gallery-images:hover .gallery-text {
+  opacity: 1;
+}
+.gallery-images:last-child {
+  flex-grow: 0;
+}
 
+.gallery-img {
+  transition: filter .5s ease-in-out, transform .3s ease-out, border .3s ease-in-out;
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+  box-shadow: 0px 0px 15px 2px rgba(100, 100, 100, 0.25);
+  border-radius: 3px;
+}
+
+.gallery-text {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  transition: opacity .5s ease-in-out;
+  font-family: "Karla", sans-serif;
+  color: #FFF;
+  font-size: 2.2rem;
+  opacity: 0;
+}
+.gallery-text:hover {
+  cursor: pointer;
+}
 
 /* Responsive Design */
 
@@ -232,6 +331,10 @@ body {
   .nav__link:hover:after, .nav__link:hover:before {
     width: 36%; 
   }
+  
+  .gallery-img {
+    width: 60vw;
+  }
 }
 
 @media all and (max-width: 56.25em) { /* Portrait tablets - 900px */
@@ -240,16 +343,31 @@ body {
   } 
   .u-margin-bottom-medium {
     margin-bottom: 3rem !important; 
-  } 
+  }
+
+  .gallery-list {
+    text-align: center;
+  }
+  .gallery-images {
+    height: auto;
+    margin: 2vmin auto 4vmin auto;
+    width: 100%;
+  }
+  .gallery-img {
+    width: 50vw;
+  }
 }
 
 @media all and (max-width: 75em) { /* Landscape tablets - 1200px */
   .header__main {
     background-image: linear-gradient(rgba(34, 34, 34, 0.7), rgba(34, 34, 34, 0.7)), url(./images/hero_mobile.jpg);
   }
-
   .header__text {
     right: 5%;
+  }
+
+  .gallery-image {
+    height: 30vh;
   }
 }
 
