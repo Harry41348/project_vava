@@ -194,17 +194,8 @@ section {
   color: #fff;
 }
 
-
-.nav__link-inverted:link, .nav__link-inverted:visited {
-  color: #000;
-}
-
-.nav__link-inverted:before, .nav__link-inverted:after {
-  border-color: rgba(0, 0, 0, 0); 
-}
-
 .nav__link-inverted:hover {
-  border-color: #fff;
+  color: #000;
 }
 
 .footer {

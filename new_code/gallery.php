@@ -19,33 +19,17 @@ require_once 'includes/connect.php';
 <main class="container">
     <section class="section-gallery">
         <ul class="gallery-list">
-
             <?php
                 $query = "SELECT * FROM `projects` ";
                 $projects = mysqli_query($con, $query);
 
                 while($row = mysqli_fetch_array($projects)){
                     echo "<li class=\"gallery-images\">";
-                    echo "<a href=\"#\"><img class=\"gallery-img\" src=\"data:image;base64," . base64_encode($row['image_header']) . "\" alt=\"" . $row ['name'] . " header image.\">";
+                    echo "<a href=\"project.php?project=" . $row ['project_id'] . "\"><img class=\"gallery-img\" src=\"data:image;base64," . base64_encode($row['image_header']) . "\" alt=\"" . $row ['name'] . " header image.\">";
                     echo "<div class=\"gallery-text\">View Project</div></a>";
                     echo "</li>";
                 }
             ?>
-
-            <!-- <li class="gallery-images">
-                <a href="#"><img class="gallery-img" src="img/project_01/head.jpg" alt="Project 1 header image.">
-                <div class="gallery-text">View Project</div></a>
-            </li>
-
-            <li class="gallery-images">
-                <a href="#"><img class="gallery-img" src="img/project_02/head.jpg" alt="Project 1 header image.">
-                <div class="gallery-text">View Project</div></a>
-            </li>
-
-            <li class="gallery-images">
-                <a href="#"><img class="gallery-img" src="img/project_03/head.jpg" alt="Project 1 header image.">
-                <div class="gallery-text">View Project</div></a>
-            </li> -->
         </ul>
     </section>
 </main>
