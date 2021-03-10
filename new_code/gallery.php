@@ -3,7 +3,6 @@ require_once 'includes/header.php';
 require_once 'includes/connect.php';
 ?>
 
-
 <header class="header__main">
     <nav class="nav">
         <ul class="nav__list">
@@ -20,21 +19,22 @@ require_once 'includes/connect.php';
     <section class="section-gallery">
         <ul class="gallery-list">
             <?php
-                $query = "SELECT * FROM `projects` ";
+                $query = "SELECT * FROM `photography_projects` ORDER BY order_index";
                 $projects = mysqli_query($con, $query);
 
                 while($row = mysqli_fetch_array($projects)){
                     echo "<li class=\"gallery-images\">";
-                    echo "<a href=\"project.php?project=" . $row ['project_id'] . "\"><img class=\"gallery-img\" src=\"data:image;base64," . base64_encode($row['image_header']) . "\" alt=\"" . $row ['name'] . " header image.\">";
+                    echo "<a href=\"project.php?project=" . $row ['project_id'] . "\"><img class=\"gallery-img\" src=\"imgs/" . $row ['image_pointer'] . "/head.jpg\" alt=\"" . $row ['name'] . " header image.\">";
                     echo "<div class=\"gallery-text\">View Project</div></a>";
                     echo "</li>";
                 }
             ?>
         </ul>
     </section>
+    <div class="push"></div>
 </main>
 
 <?php
-require_once 'includes/footer.php';
 $con = null;
+require_once 'includes/footer.php';
 ?>

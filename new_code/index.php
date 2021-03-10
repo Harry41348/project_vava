@@ -14,5 +14,6 @@ require_once 'includes/header.php';
     <h1 class="header__text header__primary">Vava Rush</h1>
     <h1 class="header__text header__secondary">Creative Director</h1>
 </header>
+</div>
 </body>
 </html>
