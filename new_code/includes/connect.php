@@ -3,7 +3,7 @@
   $server = "localhost";
   $username = "root";
   $password = "";
-  $database = "vava_photography";
+  $database = "valeurdb";
 
   $con = mysqli_connect($server, $username, $password, $database);
 

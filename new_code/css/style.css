@@ -120,6 +120,16 @@ section {
   padding-top: 6rem;
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+  margin-bottom: -14rem;
+}
+
+.push {
+  margin-bottom: 14rem;
+}
+
 .header__main {
   height: 100vh;
   background-image: linear-gradient(rgba(34, 34, 34, 0.7), rgba(34, 34, 34, 0.7)), url(./images/hero.jpg);
@@ -136,6 +146,11 @@ section {
   position: absolute;
   top: 46%;
   right: 20%;
+  transition: transform .3s ease;
+}
+
+.header__text:hover {
+  transform: scale(1.2);
 }
 
 .header__primary {
@@ -152,7 +167,6 @@ section {
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
   animation: moveInLeft 1.5s ease-out;
 }
-
 
 .nav {
   z-index: 10;
@@ -191,25 +205,23 @@ section {
 }
 
 .nav__link-active:link, .nav__link-active:visited {
-  color: #fff;
-}
-
-
-.nav__link-inverted:link, .nav__link-inverted:visited {
   color: #000;
-}
-
-.nav__link-inverted:before, .nav__link-inverted:after {
-  border-color: rgba(0, 0, 0, 0); 
+  cursor: default;
 }
 
 .nav__link-inverted:hover {
-  border-color: #fff;
+  color: #000;
 }
 
 .footer {
-  margin-top: 2rem;
-  height: 14rem; 
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 14rem;
+  /* margin-top: 2rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .footer-icons {
   display: flex;
@@ -259,6 +271,15 @@ section {
 
 /* Gallery */
 
+.about-paragraph {
+  font-size: 1.8rem;
+  padding: 0 2rem;
+}
+
+.about-paragraph:not(:last-of-type) {
+  padding-bottom: 1rem;
+}
+
 .gallery-list {
   display: flex;
   flex-wrap: wrap;
@@ -272,6 +293,9 @@ section {
   flex-grow: 1;
   margin: 2vmin;
 }
+
+
+
 .gallery-images:hover .gallery-img {
   filter: brightness(50%);
 }
@@ -280,6 +304,10 @@ section {
 }
 .gallery-images:last-child {
   flex-grow: 0;
+}
+
+.gallery-images a:focus {
+  outline: 0;
 }
 
 .gallery-img {
@@ -309,12 +337,312 @@ section {
   cursor: pointer;
 }
 
+/* Login */
+
+.login-body {
+  background-color: #435165;
+}
+
+
+.login {
+  width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
+}
+.login h1 {
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
+}
+.login form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+.login form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #3274d6;
+  color: #ffffff;
+}
+.login form input[type="password"], .login form input[type="text"] {
+  width: 310px;
+  height: 50px;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+.login form input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #3274d6;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+.login form input[type="submit"]:hover {
+background-color: #2868c7;
+  transition: background-color 0.2s;
+}
+
+/* Admin page */
+
+.admin-text {
+  margin: 0;
+  padding: 2.5rem 0;
+  font-size: 2rem;
+  border-bottom: 1px solid #e0e0e3;
+  color: #4a536e;
+}
+
+.navtop {
+	background-color: #2f3947;
+	height: 60px;
+	width: 100%;
+	border: 0;
+}
+.navtop div {
+	display: flex;
+	margin: 0 auto;
+	width: 1000px;
+	height: 100%;
+}
+.navtop div h1, .navtop div a {
+	display: inline-flex;
+	align-items: center;
+}
+.navtop div h1 {
+	flex: 1;
+	font-size: 24px;
+	padding: 0;
+	margin: 0;
+	color: #eaebed;
+	font-weight: normal;
+}
+.navtop div a {
+	padding: 0 20px;
+	text-decoration: none;
+	color: #c1c4c8;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.navtop div a i {
+	padding: 2px 8px 0 0;
+}
+.navtop div a:hover {
+	color: #eaebed;
+}
+body.loggedin {
+	background-color: #f3f4f7;
+}
+.content {
+	width: 1000px;
+	margin: 0 auto;
+}
+.content h2 {
+	margin: 0;
+	padding: 25px 0;
+	font-size: 22px;
+	border-bottom: 1px solid #e0e0e3;
+	color: #4a536e;
+}
+.content > p:not(.admin-text), .content > div {
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+	margin: 25px 0;
+	padding: 25px;
+	background-color: #fff;
+}
+.content > p table td, .content > div table td {
+	padding: 5px;
+}
+.content > p table td:first-child, .content > div table td:first-child {
+	font-weight: bold;
+	color: #4a536e;
+	padding-right: 15px;
+}
+.content > div p {
+	padding: 5px;
+	margin: 0 0 10px 0;
+}
+
+.content p {
+  font-size: 1.6rem;
+}
+
+/* Add photos */
+
+.content .add-photos-wrapper {
+  background-color: transparent;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.content .register-photos {
+  align-self: center;
+  flex-grow: 0;
+  padding: 0;
+  margin: 3rem 3rem;
+}
+
+.register-photos form {
+  flex-direction: column;
+  flex: 1 0 100%;
+  align-items: center;
+}
+
+/* Register */
+
+.register {
+  width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
+}
+.register h1 {
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
+}
+.register form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+.register form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #3274d6;
+  color: #ffffff;
+}
+.register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
+  width: 310px;
+  height: 50px;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+.register form input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #3274d6;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+.register form input[type="submit"]:hover {
+background-color: #2868c7;
+  transition: background-color 0.2s;
+}
+
+/* Edit projects */
+
+.modify__projects--wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.modify__projects--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.modify__projects--imgs {
+  height: 20rem;
+  width: auto;
+}
+
+.modify__projects--name {
+  text-align: right;
+  flex-basis: 10rem;
+}
+
+/* Error */
+
+.error {
+  font-size: 5rem;
+  color: #555;
+}
+
 /* Responsive Design */
 
-@media all and (max-width: 37.5em) { /* Phone - 600px */
+
+@media all and (min-width: 112.5em) { /* Big desktops - 1800px+ */
   .header__text {
-    font-size: 9rem;
+    right: 10%;
   }
+}
+
+@media all and (max-width: 75em) { /* Landscape tablets - 1200px */
+  .header__main {
+    background-image: linear-gradient(rgba(34, 34, 34, 0.7), rgba(34, 34, 34, 0.7)), url(./images/hero_mobile.jpg);
+  }
+  .header__text {
+    right: 5%;
+  }
+
+  .gallery-list {
+    padding: 2rem;
+  }
+
+  .gallery-image {
+    height: 30vh;
+  }
+
+  .container{
+    max-width: 100rem;
+  }
+}
+
+
+@media all and (max-width: 56.25em) { /* Portrait tablets - 900px */
+  .u-margin-bottom-large {
+    margin-bottom: 5rem !important; 
+  } 
+  .u-margin-bottom-medium {
+    margin-bottom: 3rem !important; 
+  }
+
+  .gallery-img {
+    width: 40vw;
+  }
+
+  .about-paragraph {
+    font-size: 1.6rem;
+  }
+}
+
+
+@media all and (max-width: 37.5em) { /* Phone - 600px */
+  section {
+    padding-top: 0;
+  }
+
   .header__secondary {
     margin-top: 0;
   }
@@ -331,48 +659,25 @@ section {
   .nav__link:hover:after, .nav__link:hover:before {
     width: 36%; 
   }
-  
-  .gallery-img {
-    width: 60vw;
-  }
-}
 
-@media all and (max-width: 56.25em) { /* Portrait tablets - 900px */
-  .u-margin-bottom-large {
-    margin-bottom: 5rem !important; 
-  } 
-  .u-margin-bottom-medium {
-    margin-bottom: 3rem !important; 
+  .header__text {
+    font-size: 6rem;
+    right: auto;
+    text-align: center;
+    width:100%;
   }
 
   .gallery-list {
     text-align: center;
+    padding: 2rem 8rem;
   }
   .gallery-images {
     height: auto;
     margin: 2vmin auto 4vmin auto;
     width: 100%;
   }
+  
   .gallery-img {
-    width: 50vw;
-  }
-}
-
-@media all and (max-width: 75em) { /* Landscape tablets - 1200px */
-  .header__main {
-    background-image: linear-gradient(rgba(34, 34, 34, 0.7), rgba(34, 34, 34, 0.7)), url(./images/hero_mobile.jpg);
-  }
-  .header__text {
-    right: 5%;
-  }
-
-  .gallery-image {
-    height: 30vh;
-  }
-}
-
-@media all and (min-width: 112.5em) { /* Big desktops - 1800px+ */
-  .header__text {
-    right: 25%;
+    width: 40vw;
   }
 }
