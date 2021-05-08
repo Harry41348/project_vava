@@ -26,12 +26,23 @@ if (!isset($_SESSION['loggedin'])) {
 			<p class="admin-text">Add project</p>
 			<div class="add-photos-wrapper">
 				<div class="register register-photos">
-					<p class="admin-text">New Project</p>
-					<form action="newproject.php" method="POST" autocomplete="off">
+					<p class="admin-text">New Photography Project</p>
+					<form action="gallery/newproject.php" method="POST" autocomplete="off">
+						<input type="text" name="name" placeholder="Project Name" id="name" required>
+						<input type="text" name="dir" placeholder="Directory Name (unique)" id="dir" required>
+						<input type="int" name="num_of_photos" placeholder="Number of photos" id="num_of_photos" step="1" required>
+						<input type="int" name="order" placeholder="Order [1 appears first]" id="order" required>
+						<input type="submit" value="Add project">
+					</form>
+				</div>
+
+				<div class="register register-photos">
+					<p class="admin-text">New Video Project</p>
+					<form action="video/newproject.php" method="POST" autocomplete="off">
 						<input type="text" name="name" placeholder="Project Name" id="name" required>
 						<input type="text" name="dir" placeholder="Directory Name" id="dir" required>
 						<input type="int" name="num_of_photos" placeholder="Number of photos" id="num_of_photos" step="1" required>
-						<input type="int" name="order" placeholder="Order [Start at 1]" id="order" required>
+						<input type="int" name="order" placeholder="Order" id="order" required>
 						<input type="submit" value="Add project">
 					</form>
 				</div>

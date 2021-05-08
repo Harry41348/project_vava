@@ -7,7 +7,7 @@ require_once 'includes/header.php';
     <nav class="nav">
         <ul class="nav__list">
             <li class="nav__item"><a href="gallery.php" class="nav__link">Gallery</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Videos</a></li>
+            <li class="nav__item"><a href="videos.php" class="nav__link">Videos</a></li>
         </ul>
     </nav>
     

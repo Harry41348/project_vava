@@ -2,14 +2,7 @@
 session_start();
 
 // Database Connection
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "valeurdb";
-
-$con = mysqli_connect($server, $username, $password, $database);
-
-if(!$con) { die("Database connection failed!"); }
+require_once 'connect.php';
 
 
 if (!isset($_POST['admin_name'], $_POST['password'], $_POST['email'])) {
