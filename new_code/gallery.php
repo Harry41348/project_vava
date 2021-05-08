@@ -7,25 +7,19 @@ require_once 'includes/connect.php';
     <nav class="nav">
         <ul class="nav__list">
             <li class="nav__item"><a href="#" class="nav__link nav__link-active">Gallery</a></li>
-            <li class="nav__item"><a href="#" class="nav__link nav__link-inverted">Videos</a></li>
+            <li class="nav__item"><a href="videos.php" class="nav__link nav__link-inverted">Videos</a></li>
         </ul>   
     </nav>
 
     <!-- <h1 class="header__text header__primary">Vava Rush</h1>
     <h1 class="header__text header__secondary">Creative Director</h1> -->
-</header>
+</header>   
 
 <main class="container">
     <section class="about">
-        <p class="paragraph about-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur consequat sapien vel 
-        pulvinar. Pellentesque lacinia maximus felis, eget dapibus nibh egestas in. Nulla pretium volutpat lorem ac 
-        dignissim. Pellentesque feugiat viverra mollis. Proin ut efficitur nisi. Praesent mollis maximus lorem non 
-        vestibulum. Proin venenatis pulvinar massa at rhoncus.</p>
-
-        <p class="paragraph about-paragraph">Quisque ullamcorper leo vel ligula dapibus, nec vestibulum ex elementum. Nulla mi enim, egestas non laoreet ut, 
-        dictum in sem. Quisque porttitor augue et urna luctus varius. Mauris ac varius nisl. Duis varius, quam ut laoreet 
-        commodo, diam felis congue odio, non rhoncus arcu ipsum at justo. Curabitur eu libero non felis vulputate iaculis. 
-        Fusce in iaculis leo, eget egestas velit.</p>
+        <p class="paragraph about-paragraph">Whilst working towards a bachelors degree in Photography at the 
+        University of Huddersfield, Valeur Rush excels at taking stunning Photographs every time. Check out 
+        his work below!</p>
     </section>
     <section class="section-gallery">
         <ul class="gallery-list">

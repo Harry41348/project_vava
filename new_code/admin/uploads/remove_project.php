@@ -3,14 +3,7 @@
 session_start();
 
 // Database Connection
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "valeurdb";
-
-$con = mysqli_connect($server, $username, $password, $database);
-
-if(!$con) { die("Database connection failed!"); }
+require_once '../connect.php';
 
 // Get the project
 $query = "SELECT * FROM `photography_projects` WHERE project_id=" . $_POST["id"];
@@ -48,7 +41,7 @@ if(!mysqli_query($con, $sql)){
   die("ERROR: Not able to execute $sql." . mysqli_error($sql));
 }
 
-header('Location: ../existingprojects.php');
+header('Location: ../gallery/existingprojects.php');
 
 $con->close();
 // If the user is not logged in redirect to the login page...

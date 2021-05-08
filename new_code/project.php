@@ -16,6 +16,7 @@ require_once 'includes/connect.php';
           $project_id = $_GET["project"];
           $query = "SELECT image_pointer, number_of_photos FROM `photography_projects` WHERE project_id=" . $project_id;
           $project = mysqli_query($con, $query);
+
           if($project->num_rows === 1){
             $row = $project->fetch_row();
             $name = $row[0] ?? false;

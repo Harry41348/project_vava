@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
         die("Not uploaded because of error #".$_FILES["image"]["error"]);
       }
       
-      header("location: ../editproject.php?project=" . $_POST["id"]);
+      header("location: ../gallery/editproject.php?project=" . $_POST["id"]);
     } else {
       echo "There was an error with the file upload.";
     }
