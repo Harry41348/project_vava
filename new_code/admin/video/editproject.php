@@ -28,7 +28,7 @@ if($project->num_rows === 1){
 		<link href="../../css/style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
-	<body class="loggedin">
+	<body class="loggedin body-edit">
 		<?php include("../nav.php") ?>
 
 		<!-- Content -->
@@ -41,15 +41,22 @@ if($project->num_rows === 1){
         </form>
       </div>
 			<div class="add-photos-wrapper">
-				<div class="register register-photos">
+				<div class="admin-form new-content edit-project">
           <p class="admin-text">Edit Project</p>
           <form action="changeproject.php" method="POST" autocomplete="off">
-            <input type="hidden" name="id" value="<?php echo $row[0]; ?>">
-						<input type="text" name="name" placeholder="Project Title" value="<?php echo $row [1]; ?>" id="name">
-            <label for="num_of_photos">Number of photos</label>
-            <input type="int" name="num_of_photos" placeholder="Number of photos" id="num_of_photos" step="1" value="<?php echo $row [4]; ?>">
-            <label for="order">Order</label>
-            <input type="int" name="order" placeholder="Order [Start at 1]" id="order" value="<?php echo $row [3]; ?>">
+            <input type="hidden" name="id" placeholder="<?php echo $row[0]; ?>">
+            <div class="label-container">
+              <label for="name">Project title</label>
+              <input type="text" name="name" placeholder="Project Title" value="<?php echo $row [1]; ?>" id="name">
+            </div>
+            <div class="label-container">
+              <label for="num_of_photos">Number of photos</label>
+              <input type="int" name="num_of_photos" placeholder="Number of photos" id="num_of_photos" step="1" value="<?php echo $row [4]; ?>">
+            </div>
+            <div class="label-container">
+              <label for="order">Order</label>
+              <input type="int" name="order" placeholder="Order [Start at 1]" id="order" value="<?php echo $row [3]; ?>">
+            </div>
 						<input type="submit" value="Submit changes">
           </form>
         </div>

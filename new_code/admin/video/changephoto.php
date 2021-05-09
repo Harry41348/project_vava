@@ -1,16 +1,9 @@
 <?php
-// session_start();
+
+session_start();
 
 // Database Connection
-// $server = "localhost";
-// $username = "root";
-// $password = "";
-// $database = "valeurdb";
-
-// $con = mysqli_connect($server, $username, $password, $database);
-
-// if(!$con) { die("Database connection failed!"); }
-
+require_once '../connect.php';
 
 if (isset($_POST['submit'])) {
   // $image = $_FILES['image'];
@@ -33,7 +26,7 @@ if (isset($_POST['submit'])) {
     if($fileError === 0){
       // $fileNameNew = $_POST['folder'] . "." . $fileActualExt;
       
-      $fileDestination = $_SERVER['DOCUMENT_ROOT'] . '/projects/vava_project/videos/';
+      $fileDestination = $_SERVER['DOCUMENT_ROOT'] . $video_directory;
       $fileDestination .= $_POST['folder'] . '/';
 
       if(!is_writable($fileDestination)){
@@ -54,7 +47,7 @@ if (isset($_POST['submit'])) {
         die("Not uploaded because of error #".$_FILES["image"]["error"]);
       }
       
-      header("location: ../gallery/editproject.php?project=" . $_POST["id"]);
+      header("location: editproject.php?project=" . $_POST["id"]);
     } else {
       echo "There was an error with the file upload.";
     }

@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
     if($fileError === 0){
       // $fileNameNew = $_POST['folder'] . "." . $fileActualExt;
       
-      $fileDestination = $_SERVER['DOCUMENT_ROOT'] . '/projects/vava_project/imgs/';
+      $fileDestination = $_SERVER['DOCUMENT_ROOT'] . $directory;
       $fileDestination .= $_POST['folder'] . '/';
 
       if (!is_dir($fileDestination)) {

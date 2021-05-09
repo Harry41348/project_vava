@@ -25,25 +25,25 @@ if (!isset($_SESSION['loggedin'])) {
 			<p>Welcome back, <span style="text-transform: capitalize;"><?=$_SESSION['name']?></span>!</p>
 			<p class="admin-text">Add project</p>
 			<div class="add-photos-wrapper">
-				<div class="register register-photos">
-					<p class="admin-text">New Photography Project</p>
+				<div class="admin-form new-content">
+					<p class="admin-text form-header">New Photography Project</p>
 					<form action="gallery/newproject.php" method="POST" autocomplete="off">
 						<input type="text" name="name" placeholder="Project Name" id="name" required>
 						<input type="text" name="dir" placeholder="Directory Name (unique)" id="dir" required>
 						<input type="int" name="num_of_photos" placeholder="Number of photos" id="num_of_photos" step="1" required>
-						<input type="int" name="order" placeholder="Order [1 appears first]" id="order" required>
-						<input type="submit" value="Add project">
+						<input type="int" name="order" placeholder="Order in gallery" id="order" required>
+						<input type="submit" value="Create project">
 					</form>
 				</div>
 
-				<div class="register register-photos">
-					<p class="admin-text">New Video Project</p>
+				<div class="admin-form new-content">
+					<p class="admin-text form-header">New Video Project</p>
 					<form action="video/newproject.php" method="POST" autocomplete="off">
 						<input type="text" name="name" placeholder="Project Name" id="name" required>
 						<input type="text" name="dir" placeholder="Directory Name" id="dir" required>
 						<input type="int" name="num_of_photos" placeholder="Number of photos" id="num_of_photos" step="1" required>
-						<input type="int" name="order" placeholder="Order" id="order" required>
-						<input type="submit" value="Add project">
+						<input type="int" name="order" placeholder="Order in gallery" id="order" required>
+						<input type="submit" value="Create project">
 					</form>
 				</div>
 				<!-- Add individual photos -->

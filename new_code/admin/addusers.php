@@ -26,7 +26,7 @@ if (!isset($_SESSION['loggedin']) && !($_SESSION['master'])) {
 		</nav>
 		<div class="content">
       <h2>Add Users</h2>
-      <div class="register">
+      <div class="admin-form">
 			<form action="register.php" method="post" autocomplete="off">
 				<label for="username">
 					<i class="fas fa-user"></i>

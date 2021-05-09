@@ -20,7 +20,7 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 }
 
 if (preg_match('/^[a-zA-Z0-9]+$/', $_POST['admin_name']) == 0) {
-    exit('Username is not valid!');
+  exit('Username is not valid!');
 }
 
 if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
@@ -39,13 +39,13 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE admin_name = 
 	} else {
 		if ($stmt = $con->prepare('INSERT INTO accounts (admin_name, password, email) VALUES (?, ?, ?)')) {
       // We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
-		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-		$stmt->bind_param('sss', $_POST['admin_name'], $password, $_POST['email']);
-		$stmt->execute();
-		header('Location: index.php');
+      $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+      $stmt->bind_param('sss', $_POST['admin_name'], $password, $_POST['email']);
+      $stmt->execute();
+      header('Location: index.php');
     } else {
-      	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
-    	echo 'Could not prepare statement!';
+      // Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
+      echo 'Could not prepare statement!';
     }
 	}
 	$stmt->close();

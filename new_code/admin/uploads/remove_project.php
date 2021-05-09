@@ -17,7 +17,7 @@ if($project->num_rows === 1){
 
 $dir = $row[2];
 
-$fileDestination = $_SERVER['DOCUMENT_ROOT'] . '/projects/vava_project/imgs/' . $dir . '/';
+$fileDestination = $_SERVER['DOCUMENT_ROOT'] . $directory . $dir . '/';
 $it = new RecursiveDirectoryIterator($fileDestination, RecursiveDirectoryIterator::SKIP_DOTS);
 $files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
 

@@ -5,6 +5,27 @@ session_start();
 // Database Connection
 require_once '../connect.php';
 
+$fileDestination = $_SERVER['DOCUMENT_ROOT'] . $video_directory;
+$fileDestination .= $_POST["dir"] . '/';
+
+if (!is_dir($fileDestination)) {
+	//die("Not a directory.");
+	
+	if (!mkdir($fileDestination, 0777, true)) {
+		die("Failed to create");
+	}
+
+	$sql = "INSERT INTO `video_projects` (`name`, `pointer`, `date`, `project_order`, `num_of_photos`)";
+	$sql .= "VALUES ('" . $_POST["name"] . "', '" . $_POST["dir"] . "', '2021-03-08', '" . $_POST["order"];
+	$sql .= "', '". $_POST["num_of_photos"] . "');";
+
+	if(!mysqli_query($con, $sql)){
+		die("ERROR: Not able to execute $sql." . mysqli_error($sql));
+	}
+} else {
+	die("ERROR: Directory already exists");
+}
+
 // Images
 
 for ($i=0; $i < $_POST["num_of_photos"]+1; $i++) { 
@@ -29,7 +50,7 @@ for ($i=0; $i < $_POST["num_of_photos"]+1; $i++) {
     if($fileError === 0){
       // $fileNameNew = "project_test";
       
-      $fileDestination = $_SERVER['DOCUMENT_ROOT'] . '/projects/vava_project/videos/';
+      $fileDestination = $_SERVER['DOCUMENT_ROOT'] . $video_directory;
       $fileDestination .= $_POST['dir'] . '/';
 
       
@@ -81,7 +102,7 @@ if (in_array($fileActualExt, $allowed)) {
   if($fileError === 0){
     // $fileNameNew = "project_test";
     
-    $fileDestination = $_SERVER['DOCUMENT_ROOT'] . '/projects/vava_project/videos/';
+    $fileDestination = $_SERVER['DOCUMENT_ROOT'] . $video_directory;
     $fileDestination .= $_POST['dir'] . '/';
 
     
